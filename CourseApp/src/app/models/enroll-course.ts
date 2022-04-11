@@ -1,9 +1,9 @@
 export class EnrollCourse {
     
     userName?:string;
-    userEmail?:string;
-    courseName?:string;
-    courseDescription?:string;
-    coursePrice?:number;
+    email?:string;
+    name?:string;
+    description?:string;
+    price?:number;
     
 }

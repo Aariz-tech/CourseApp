@@ -1,0 +1,19 @@
+.section-1 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    background-color: #F7E2E2;
+    padding: 70px;
+    text-align: center;
+}
+/* #training-features
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 70px;
+} */
+
+#training-feature-heading
+{
+    color: #F55353;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}

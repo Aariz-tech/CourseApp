@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { EnrollCourse } from 'src/app/models/enroll-course';
 import { Logincourse } from 'src/app/models/logincourse';
 import { CourseService } from 'src/app/services/course.service';
@@ -61,14 +62,16 @@ export class EnrollcourseComponent implements OnInit {
       console.log(courseDescription);
       console.log(coursePrice);
       var enrolledCourse: EnrollCourse = {
+        name:courseName!,
+        price:Number(coursePrice),
+        description:courseDescription!,
+        userName:userName!,
+        email:userEmail!
+
       };
-      enrolledCourse.userName=JSON.parse(localStorage.getItem('UserName') || '{}')
-      enrolledCourse.userEmail = JSON.parse(localStorage.getItem('UserEmail') || '{}')
-      enrolledCourse.courseName = JSON.parse(localStorage.getItem('CourseName') || '{}')
-      enrolledCourse.courseDescription = JSON.parse(localStorage.getItem('CourseDescription') || '{}')
-      enrolledCourse.coursePrice = JSON.parse(localStorage.getItem('CoursePrice') || '')
       
-      console.log(enrolledCourse.userEmail)
+      
+      
       //enrolledCourse:EnrollCourse;
       //enrolledCourse.userName = userName;
 
