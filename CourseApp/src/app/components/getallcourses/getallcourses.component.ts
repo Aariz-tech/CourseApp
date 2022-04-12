@@ -31,6 +31,46 @@ export class GetallcoursesComponent implements OnInit {
       this.courses = res;
     });
   }
+  enrollMyCourse(value1,value2,value3)
+  {
+    var userName = localStorage.getItem("UserName");
+    var userEmail = localStorage.getItem("UserEmail");
+    
+    
+    var courseName = value1.innerText;
+    var courseDescription = value2.innerText;
+    var coursePrice = value3.innerText;
+    var splitsCoursePrice = coursePrice.split(".");
+    console.log(splitsCoursePrice[1]);
+    var enrolledCourse: EnrollCourse = {
+      name:String(courseName),
+      price:Number(splitsCoursePrice[1]),
+      description:String(courseDescription),
+      userName:userName!,
+      email:userEmail!,
+
+
+    };
+    console.log(enrolledCourse);
+
+    this.courseService.enrolledMyCourse(enrolledCourse).subscribe(res=>{
+      if(res)
+    {
+      Swal.fire(
+        'Enrolled Course',
+        'Enrolled Course Success',
+        'success'
+      )
+      console.log("Course Enrolled Success");
+      
+      this.router.navigate(['getallcourses']);
+    }
+    else 
+    {
+      console.log("Course Enrolled Failed");
+    }
+    })
+  }
   
   }
     

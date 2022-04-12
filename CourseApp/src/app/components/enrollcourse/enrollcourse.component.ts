@@ -7,6 +7,7 @@ import { Logincourse } from 'src/app/models/logincourse';
 import { CourseService } from 'src/app/services/course.service';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-enrollcourse',
   templateUrl: './enrollcourse.component.html',
@@ -16,8 +17,10 @@ export class EnrollcourseComponent implements OnInit {
 
   loginCourse:Logincourse;
   
+  
   constructor(private courseService:CourseService, private router:Router) {
     this.loginCourse = new Logincourse();
+    
    }
 
   ngOnInit(): void {
@@ -61,12 +64,14 @@ export class EnrollcourseComponent implements OnInit {
       console.log(courseName);
       console.log(courseDescription);
       console.log(coursePrice);
+      
       var enrolledCourse: EnrollCourse = {
         name:courseName!,
         price:Number(coursePrice),
         description:courseDescription!,
         userName:userName!,
-        email:userEmail!
+        email:userEmail!,
+
 
       };
       

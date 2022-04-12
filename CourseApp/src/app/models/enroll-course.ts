@@ -5,5 +5,6 @@ export class EnrollCourse {
     name?:string;
     description?:string;
     price?:number;
+    CreatedAt?:any;
     
 }

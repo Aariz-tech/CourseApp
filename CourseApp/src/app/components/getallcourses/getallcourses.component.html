@@ -22,11 +22,11 @@
           <div class="card box-shadow" style="width: 18rem;">
              <img src="assets/images/go-lang.jpg" class="card-img-top" alt="go-lang"> 
               <div class="card-body">
-                <h5 class="card-title">{{course.courseName}}</h5>
-                <p class="card-text">{{course.courseDescription}}</p>
-                <p class="card-text price-tag">Rs.{{course.coursePrice}}</p>
+                <h5 class="card-title" #courseName>{{course.courseName}}</h5>
+                <p class="card-text" #courseDescription>{{course.courseDescription}}</p>
+                <p class="card-text price-tag" #coursePrice>Rs.{{course.coursePrice}}</p>
                 <form >
-                  <button type="submit" class="btn btn-primary">Add Course</button>
+                  <button type="submit" class="btn btn-primary" (click)="enrollMyCourse(courseName,courseDescription,coursePrice)">Enroll Course</button>
                 </form>
                 
               </div>

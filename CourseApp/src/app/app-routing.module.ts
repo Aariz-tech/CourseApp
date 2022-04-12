@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'logout',component:LogoutComponent,canActivate:[AuthGuard]},
   {path:'getallcourses',component:GetallcoursesComponent,canActivate:[AuthGuard]},
-  {path:'enrollcourse',component:EnrollcourseComponent,canActivate:[AuthGuard]},
+  // {path:'enrollcourse',component:EnrollcourseComponent,canActivate:[AuthGuard]},
   
   
 ];
