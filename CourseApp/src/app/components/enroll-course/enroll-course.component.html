@@ -1,0 +1,28 @@
+
+
+
+
+<div class="container-fluid" id="course-content">
+    <h1 id="Enrolled-course-heading">Enrolled  Courses</h1>
+    <div class="row" >
+        
+        <div class="col-sm-3 mb-20" *ngFor="let course of enrollCourseByUserName" >
+            <div class="card box-shadow" style="width: 18rem;">
+               <img src="assets/images/go-lang.jpg" class="card-img-top" alt="go-lang">
+  
+                <div class="card-body">
+                  
+                  <h1 #courseRef>{{course.name}}</h1>
+                  <h5 class="card-title custom-h5" ><i class="fa-solid fa-user"></i> : {{course.userName}}</h5>
+                  <p class="card-text" >{{course.description}}</p>
+                  <p class="card-text price-tag">Rs.{{course.price}}</p>
+                  <!-- <p class="card-text">EnrolledAt : {{'10-11-2022'| date:'fullDate'}}</p> -->
+                  <button type="submit" class="btn btn-outline-primary"  (click)="viewCourse(course)">View Course</button>
+                  
+                </div>
+              </div>
+        </div>
+        
+    </div>
+  
+  

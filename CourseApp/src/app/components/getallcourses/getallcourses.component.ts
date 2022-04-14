@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Course } from 'src/app/models/course';
 import { EnrollCourse } from 'src/app/models/enroll-course';
-import { Logincourse } from 'src/app/models/logincourse';
 
 import { CourseService } from 'src/app/services/course.service';
 import Swal from 'sweetalert2';
@@ -31,17 +30,20 @@ export class GetallcoursesComponent implements OnInit {
       this.courses = res;
     });
   }
-  enrollMyCourse(value1,value2,value3)
+  enrollMyCourse(value1,value2,value3,value4)
   {
     var userName = localStorage.getItem("UserName");
     var userEmail = localStorage.getItem("UserEmail");
+    var userId = localStorage.getItem('')
     
+    console.log(value4.innerText);
     
     var courseName = value1.innerText;
     var courseDescription = value2.innerText;
     var coursePrice = value3.innerText;
     var splitsCoursePrice = coursePrice.split(".");
     console.log(splitsCoursePrice[1]);
+    
     var enrolledCourse: EnrollCourse = {
       name:String(courseName),
       price:Number(splitsCoursePrice[1]),
@@ -52,24 +54,31 @@ export class GetallcoursesComponent implements OnInit {
 
     };
     console.log(enrolledCourse);
-
-    this.courseService.enrolledMyCourse(enrolledCourse).subscribe(res=>{
-      if(res)
+    if(userName != null)
     {
-      Swal.fire(
-        'Enrolled Course',
-        'Enrolled Course Success',
-        'success'
-      )
-      console.log("Course Enrolled Success");
-      
-      this.router.navigate(['getallcourses']);
+      this.courseService.enrolledMyCourse(enrolledCourse).subscribe(res=>{
+        if(res)
+      {
+        Swal.fire(
+          'Enrolled Course',
+          'Enrolled Course Success',
+          'success'
+        )
+        console.log("Course Enrolled Success");
+        
+        this.router.navigate(['enrollcourses']);
+      }
+      else 
+      {
+        console.log("Course Enrolled Failed");
+      }
+      })
     }
     else 
     {
-      console.log("Course Enrolled Failed");
+      this.router.navigate(["login"]);
     }
-    })
+    
   }
   
   }

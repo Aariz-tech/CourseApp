@@ -1,0 +1,28 @@
+.fa-user
+{
+    font-size: 24px;
+    color: #f4a261;
+}
+
+.custom-h5 
+{
+    font-size: 20px;
+    color: #03045e;
+    text-decoration: underline;
+}
+
+#Enrolled-course-heading
+{
+    text-align: center;
+    color: #e63946;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    text-decoration: underline;
+}
+
+.price-tag
+{
+    font-size: 18px;
+    text-decoration: underline;
+    color: #e63946;
+}

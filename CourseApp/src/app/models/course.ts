@@ -3,5 +3,5 @@ export class Course {
     courseName?:string;
     coursePrice?:number;
     courseDescription?:string;
-     
+    isAvailable?: boolean
 }

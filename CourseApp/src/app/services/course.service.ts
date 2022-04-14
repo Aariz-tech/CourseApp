@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course';
 import { EnrollCourse } from '../models/enroll-course';
-import { Logincourse } from '../models/logincourse';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +16,21 @@ export class CourseService {
     return this.httpClient.get<Array<Course>>('https://localhost:5018/api/Course/getAllCourses');
 
   }
-  loginCourse(logincourse:Logincourse):Observable<boolean> {
-    return this.httpClient.post<boolean>('https://localhost:5018/api/Course/loginCourse',logincourse)
-  }
+  
   enrolledMyCourse(enrollCourse:EnrollCourse):Observable<boolean>
   {
     return this.httpClient.post<boolean>('https://localhost:5001/api/EnrollCourse/enrollCourse',enrollCourse)
+  }
+ 
+
+  enrolledCourseByUserName(userName:string):Observable<Array<EnrollCourse>>
+  {
+    return this.httpClient.get<Array<EnrollCourse>>('https://localhost:5001/api/EnrollCourse/getAllEnrolledCourseByName?username='+userName);
+  }
+
+  getCourseByName(courseName:String):Observable<Course>
+  {
+    return this.httpClient.get<Course>('https://localhost:5018/api/Course/getCourseByName?courseName='+courseName);
   }
 
 

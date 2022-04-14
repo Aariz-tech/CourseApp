@@ -23,8 +23,11 @@ import { GetallcoursesComponent } from './components/getallcourses/getallcourses
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { EnrollcourseComponent } from './components/enrollcourse/enrollcourse.component';
+
 import { ServiceSectionComponent } from './components/service-section/service-section.component';
+import { HomeComponent } from './components/home/home.component';
+import { EnrollCourseComponent } from './components/enroll-course/enroll-course.component';
+import { ViewCourseComponent } from './components/view-course/view-course.component';
 
 
 @NgModule({
@@ -38,8 +41,11 @@ import { ServiceSectionComponent } from './components/service-section/service-se
     CarouselComponent,
     GetallcoursesComponent,
     FooterComponent,
-    EnrollcourseComponent,
-    ServiceSectionComponent
+    
+    ServiceSectionComponent,
+         HomeComponent,
+         EnrollCourseComponent,
+         ViewCourseComponent
     
     
   ],

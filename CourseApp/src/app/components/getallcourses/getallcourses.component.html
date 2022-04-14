@@ -20,13 +20,15 @@
       
       <div class="col-sm-3 mb-20" *ngFor="let course of courses" >
           <div class="card box-shadow" style="width: 18rem;">
-             <img src="assets/images/go-lang.jpg" class="card-img-top" alt="go-lang"> 
+             <img src="assets/images/go-lang.jpg" class="card-img-top" alt="go-lang">
+
               <div class="card-body">
+                <h1 #courseRef>{{course.courseName}}</h1>
                 <h5 class="card-title" #courseName>{{course.courseName}}</h5>
                 <p class="card-text" #courseDescription>{{course.courseDescription}}</p>
                 <p class="card-text price-tag" #coursePrice>Rs.{{course.coursePrice}}</p>
                 <form >
-                  <button type="submit" class="btn btn-primary" (click)="enrollMyCourse(courseName,courseDescription,coursePrice)">Enroll Course</button>
+                  <button type="submit" class="btn btn-primary" (click)="enrollMyCourse(courseName,courseDescription,coursePrice,courseRef)">Enroll Course</button>
                 </form>
                 
               </div>
