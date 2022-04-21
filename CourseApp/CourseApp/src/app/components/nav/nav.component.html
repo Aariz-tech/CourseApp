@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="fixed-top">
+  
+  <span routerLink="/">CourseApp</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="accent" *ngIf="!loggedIn()" routerLink="register">Register</button>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="accent" *ngIf="!loggedIn()" routerLink="login">Login</button>
+   <span class="example-spacer"></span>
+  <button mat-raised-button color="accent" *ngIf="loggedIn()" routerLink="logout">Logout</button> 
+  <span class="example-spacer"></span> 
+   <button mat-raised-button color="accent"  *ngIf="loggedIn()" routerLink="getallcourses">GetAllCourses</button>
+   <span class="example-spacer"></span>
+   
+   <button mat-raised-button color="accent" *ngIf="getAdmin()" routerLink="add-course">Add Course</button>
+   <span class="example-spacer"></span>
+  <button mat-raised-button color="accent" *ngIf="loggedIn()" routerLink="enrollcourses">GetEnrollcourse</button> 
+  <span class="example-spacer"></span>
+  <span *ngIf="loggedIn()"><i class="fa-solid fa-user"></i>  {{userName}}</span> 
+    
+</mat-toolbar>

@@ -1,0 +1,40 @@
+.box-shadow {
+    box-shadow: 0px 2px 10px #F7E2E2;
+    margin-bottom: 30px;
+}
+
+#course-content{
+    background-color: aliceblue;
+    padding: 70px;
+}
+
+
+#trending-course-heading 
+{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #398AB9;
+    text-decoration: underline;
+    
+}
+#courses-span
+{
+    color: red;
+}
+
+
+.price-tag {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.price-tag:hover {
+    color: red;
+    font-weight: bold;
+}
+
+.custom-btn
+{
+    margin-top: 5px;
+    width: 200px;
+}

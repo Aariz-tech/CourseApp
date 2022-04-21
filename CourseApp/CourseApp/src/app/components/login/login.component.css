@@ -1,0 +1,16 @@
+.custom-login-form 
+{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+
+}
+.custom-login-header
+{
+    text-decoration: underline;
+    color: blueviolet;
+    font-weight:500;
+    margin-bottom: 30px;
+}

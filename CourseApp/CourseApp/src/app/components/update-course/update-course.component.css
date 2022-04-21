@@ -1,0 +1,27 @@
+.container-fluid {
+    background-color: #F9FFA4;
+    padding: 90px;
+    text-align: center;
+}
+.custom-reg-form
+{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+
+}
+.custom-reg-header
+{
+    text-decoration: underline;
+    color: cadetblue;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.custom-btn
+{
+    margin-left: 10px;
+    width: 200px;
+}
